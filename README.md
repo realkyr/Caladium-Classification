@@ -42,7 +42,7 @@ python handcraft_based.py
 ## _Learning Based_
 ## Configuration
 วิธีการนำไฟล์มา Test ให้นำไฟล์ที่จะเทส มาใส่ในโฟลเดอร์ Test
-วิธีการนำไฟล์ Test มาใช้ จะต้องทำการ run ไฟล์ handcraft_based.py ก่อนเพื่อให้ import ข้อมูล test และ train ออกมาเป็น csv
+วิธีการนำไฟล์ Test มาใช้ จะต้องทำการ run ไฟล์ handcraft_based.py ก่อนเพื่อให้ Export ข้อมูล test และ train ออกมาเป็น csv
 ## Installation
 ```sh
 pip install -r requirements.txt
@@ -60,4 +60,4 @@ python learning_based.py
 
 ถ้ามี Error path ให้ทำการแก้ path ของไฟล์ csv ด้วยตัวเอง
 และถ้าเกิดไฟล์ไม่สามารถ run ได้ ให้ใช้ไฟล์ learning_based_test.ipynb รันผ่าน Google colab 
-และ ทำการ Upload ไฟล์ csv ขึ้นระบบด้วยตัวเอง และ copy path ด้วยตัวเอง
+และ ทำการ Upload ไฟล์ train test csv ขึ้นระบบด้วย และ copy path ลงในคำสั่ง
