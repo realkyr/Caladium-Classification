@@ -71,7 +71,8 @@ class Album:
   def get_dataframe(self):
     # save extracting feature into csv file
     if self.length == 0:
-      print("no data in album")
+      print("There is no data in album")
+      print("===== Please check if image path is right =====")
       return
     n_feature = len(self.features_vectors[0])
     data = {
