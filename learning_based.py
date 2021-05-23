@@ -12,7 +12,7 @@ def onehot(Y, nclass=12):
   return Y_
 
 # import data
-train = pd.read_csv('C:/Users/User/Desktop/Learning_based/train.csv')
+train = pd.read_csv('C:/Users/User/Desktop/Learning_based/train_handcraft_based.csv')
 test = pd.read_csv('C:/Users/User/Desktop/Learning_based/test.csv')
 train_x = train.iloc[:,3:-2]
 test_x = test.iloc[:,3:-2]
