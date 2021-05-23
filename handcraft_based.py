@@ -42,7 +42,7 @@ dynamic_input_dir = 'Test/'
 # create an Test Image's album
 test_images = Album()
 for i in range(1, 13):
-  test_images.init_album(dynamic_input_dir + str(i))
+  test_images.init_album(ROOT_PATH + dynamic_input_dir + str(i))
 
 # extracting feature
 extract_feature(test_images)
