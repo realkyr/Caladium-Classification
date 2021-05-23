@@ -25,7 +25,7 @@ for label in range(class_number):
 
   # export as csv file
   df = train_images.get_dataframe()
-  if df:
+  if df is not None:
     df.to_csv(ROOT_PATH + 'train_handcraft_based.csv', mode=("w" if label == 0 else "a"), header=(label == 0))
 
 # ===============================
@@ -108,5 +108,5 @@ for i in range(len(featureTs)):
   print(out[i])
 test_images.set_labels(new_label)
 df = test_images.get_dataframe()
-if df:
+if df is not None :
   df.to_csv(ROOT_PATH + 'test.csv')
