@@ -32,11 +32,11 @@ class Album:
       # convert grayscale into binary contour image
       contour_images.append(get_binary_image_contours(img))
 
-    self.length = len(ids)
-    self.grayscale_images = images_gray
-    self.color_images = images_color
-    self.names = ids
-    self.contour_images = contour_images
+    self.length += len(ids)
+    self.grayscale_images += images_gray
+    self.color_images += images_color
+    self.names += ids
+    self.contour_images += contour_images
   
   def get_names(self):
     return self.names

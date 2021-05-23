@@ -4,13 +4,15 @@ from Album import *
 import sklearn.neighbors as sn
 from sklearn import svm
 
+ROOT_PATH = '' # if use absolute path. path goes here like C:/document/
+
 # ===============================
 # training session
 # ===============================
 class_number = 12 # number of classes
 for label in range(class_number):
   # loop for each classes
-  dynamic_input_dir = 'Train/' + str(label+1)
+  dynamic_input_dir = ROOT_PATH + 'Train/' + str(label+1)
 
   # create train images classes
   train_images = Album()
@@ -23,23 +25,24 @@ for label in range(class_number):
 
   # export as csv file
   df = train_images.get_dataframe()
-  df.to_csv('train_handcraft_based.csv', mode=("w" if label == 0 else "a"), header=(label == 0))
+  df.to_csv(ROOT_PATH + 'train_handcraft_based.csv', mode=("w" if label == 0 else "a"), header=(label == 0))
 
 # ===============================
 # testing session
 # ===============================
 # read test set
-data_set = pd.read_csv('train_handcraft_based.csv')
+data_set = pd.read_csv(ROOT_PATH + 'train_handcraft_based.csv')
 # select all column exept 
 train_set = data_set.values[:, 1:-2]
 
 # select last column as a label
 test_label = data_set.values[:, -1]
-dynamic_input_dir = 'Test'
+dynamic_input_dir = 'Test/'
 
 # create an Test Image's album
 test_images = Album()
-test_images.init_album(dynamic_input_dir)
+for i in range(1, 13):
+  test_images.init_album(dynamic_input_dir + str(i))
 
 # extracting feature
 extract_feature(test_images)
@@ -104,4 +107,4 @@ for i in range(len(featureTs)):
   print(out[i])
 test_images.set_labels(new_label)
 df = test_images.get_dataframe()
-df.to_csv('test.csv')
+df.to_csv(ROOT_PATH + 'test.csv')
