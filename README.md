@@ -42,7 +42,7 @@ python handcraft_based.py
 ## _Learning Based_
 ## Configuration
 วิธีการนำไฟล์มา Test ให้นำไฟล์ที่จะเทส มาใส่ในโฟลเดอร์ Test
-วิธีการนำไฟล์ Test มาใช้ จะต้องทำการ run ไฟล์ handcraft_based.py ก่อนเพื่อให้ Export ข้อมูล test และ train ออกมาเป็น csv
+วิธีการนำไฟล์ Test มาใช้ จะต้องทำการ run ไฟล์ ```handcraft_based.py``` ก่อนเพื่อให้ Export ข้อมูล test และ train ออกมาเป็น csv
 ## Installation
 ```sh
 pip install -r requirements.txt
@@ -53,16 +53,16 @@ pip install -r requirements.txt
 python learning_based.py
 ```
 ## Configuration
-ไฟล์ learning_based.py เป็นไฟล์ที่เอาไว้ Train และ Save model 
+ไฟล์ ```learning_based.py``` เป็นไฟล์ที่เอาไว้ Train และ Save model 
 
-ไฟล์ learning_based_test.py เป็นการ Load Model มาทดสอบ และ เทสเพื่อดูผลลัพธ์
+ไฟล์ ```learning_based_test.py``` เป็นการ Load Model มาทดสอบ และ เทสเพื่อดูผลลัพธ์
 
-#Troubleshoot 
+## Troubleshoot 
 ถ้าเกิดว่า Run แล้วมีปัญหาเรื่อง Path หาไฟล์ไม่เจอ ให้แก้ด้วยการ copy path ใส่ไว้ในตัวแปรชื่อ โดยมี / ด้านหลัง
-ตัวอย่างเช่น C:/Users/User/Downloads/Caladium-Classification-master/Caladium-Classification-master/ 
+ตัวอย่างเช่น ```C:/Users/User/Downloads/Caladium-Classification-master/Caladium-Classification-master/``` 
 
 ถ้ามี Error path ให้ทำการแก้ path ของไฟล์ csv ด้วยตัวเอง
-และถ้าเกิดไฟล์ไม่สามารถ run ได้ ให้ใช้ไฟล์ learning_based_test.ipynb รันผ่าน Google colab 
+และถ้าเกิดไฟล์ไม่สามารถ run ได้ ให้ใช้ไฟล์ ```learning_based_test.ipynb``` รันผ่าน Google colab 
 และ ทำการ Upload ไฟล์ train test csv ขึ้นระบบด้วย และ copy path ลงในคำสั่ง
 
 
