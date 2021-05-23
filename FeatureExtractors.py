@@ -1,9 +1,17 @@
+# ========================
+# Import needed library
+# ========================
 import cv2
 import numpy as np
 from numpy import *
 from sys import *
+
 # ========================
 # this session adapted from ruipoliveira's leaves-classification-opencv project
+# ========================
+
+# ========================
+# This section is function constructure
 # ========================
 def get_corner_points(img, maxFeat):
   
@@ -41,6 +49,7 @@ def max_x_diff(img):
       min_x = x
 
   x_diff = 1.0*max_x - min_x
+  # return result x_diff 
   return x_diff
 
 def max_y_diff(img):
@@ -59,11 +68,18 @@ def max_y_diff(img):
       min_y = y
 
   y_diff = 1.0*max_y - min_y
+  #return result y_diff
   return y_diff
 
 
+# ========================
+# this section is extractor setion, write in Class
+# ========================
 class FeatureExtractors:
 
+  # ========================
+  # this is a series of feature extraction method
+  # ========================
   def length_width_ratio_feature_extractor(self, image):
     # finding ratio between width and height
     ratio = 0
@@ -112,6 +128,8 @@ class FeatureExtractors:
   def hog_texture_extractor(self, image):
     # cv2.imshow('hello', image)
     # cv2.waitKey(0)
+    
+    # defind needed variable
     winSize = (20,20)
     blockSize = (10,10)
     blockStride = (5,5)
@@ -124,7 +142,8 @@ class FeatureExtractors:
     gammaCorrection = 1
     nlevels = 64
     signedGradients = True
-
+    
+    #Construct HOG with HOG descriptor
     hog = cv2.HOGDescriptor(winSize,blockSize,blockStride,
       cellSize,nbins,derivAperture,
       winSigma,histogramNormType,L2HysThreshold,
@@ -137,6 +156,7 @@ class FeatureExtractors:
     return (feature_names, features)
 
   def feature_extractor_with_corner_count(self, image, c_image, g_imgs):
+    #get feature info from selected extractor
     (feature_names1, features1) = self.corner_count_feature_extractor(image)
     (feature_names2, features2) = self.length_width_ratio_feature_extractor(image)
     (feature_names6, features6) = self.hsv_color_extractor(c_image)
@@ -147,6 +167,7 @@ class FeatureExtractors:
     return (feature_names, features)
 
   def all_feature_extractor(self, image, c_image, g_imgs):
+    #get feature info from selected extractor
     (feature_names1, features1) = self.corner_count_feature_extractor(image)
     (feature_names2, features2) = self.length_width_ratio_feature_extractor(image)
     (feature_names3, features3) = self.hog_texture_extractor(image)
@@ -158,6 +179,7 @@ class FeatureExtractors:
     return (feature_names, features)
   
   def feature_extractor_only_hue(self, image, c_image, g_imgs):
+    #get feature info from selected extractor
     (feature_names6, features6) = self.hsv_color_extractor(c_image)
     
     features = array(list(features6))
