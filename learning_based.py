@@ -1,4 +1,5 @@
 #import library
+from handcraft_based import ROOT_PATH
 import cv2
 import numpy as np
 import pandas as pd
@@ -12,8 +13,8 @@ def onehot(Y, nclass=12):
   return Y_
 
 # import data
-train = pd.read_csv('C:/Users/User/Desktop/Learning_based/train_handcraft_based.csv')
-test = pd.read_csv('C:/Users/User/Desktop/Learning_based/test.csv')
+train = pd.read_csv(ROOT_PATH + 'train_handcraft_based.csv')
+test = pd.read_csv(ROOT_PATH + 'test.csv')
 train_x = train.iloc[:,3:-2]
 test_x = test.iloc[:,3:-2]
 train_y = train['labels']
@@ -50,7 +51,7 @@ train_x = np.array(train_x)
 test_x = np.array(test_x)
 train_y = np.array(train_y)
 test_y = np.array(test_y)
-checkpoint = ModelCheckpoint('C:/Users/User/Desktop/Learning_based/best_model.h5', verbose=1, monitor='val_accuracy',save_best_only=True, mode='auto') 
+checkpoint = ModelCheckpoint(ROOT_PATH + 'best_model.h5', verbose=1, monitor='val_accuracy',save_best_only=True, mode='auto') 
 history = model.fit(train_x, train_y, epochs=1000, validation_data=(test_x,test_y), callbacks=[checkpoint])
 
 # evaluate the model

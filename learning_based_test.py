@@ -1,4 +1,5 @@
 #import library
+from handcraft_based import ROOT_PATH
 from tensorflow import keras
 import cv2
 import numpy as np
@@ -7,7 +8,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 # import best model
-model = keras.models.load_model('C:/Users/User/Desktop/Learning_based/best_model.h5')
+model = keras.models.load_model(ROOT_PATH + 'best_model.h5')
 
 # funtion onehot example have 3 classes 1 = [1,0,0] , 2 = [0,1,0] , 3 = [0,0,1]
 def onehot(Y, nclass=12):
@@ -17,7 +18,7 @@ def onehot(Y, nclass=12):
   return Y_
 
 #import test data
-test = pd.read_csv('C:/Users/User/Desktop/Learning_based/test.csv')
+test = pd.read_csv('test.csv')
 test_x = test.iloc[:,3:-2]
 test_y = test['labels']
 test_y = onehot(test_y)
