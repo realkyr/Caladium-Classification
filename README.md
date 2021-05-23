@@ -57,7 +57,12 @@ python learning_based.py
 
 ไฟล์ learning_based_test.py เป็นการ Load Model มาทดสอบ และ เทสเพื่อดูผลลัพธ์
 
+#Troubleshoot 
+ถ้าเกิดว่า Run แล้วมีปัญหาเรื่อง Path หาไฟล์ไม่เจอ ให้แก้ด้วยการ copy path ใส่ไว้ในตัวแปรชื่อ โดยมี / ด้านหลัง
+ตัวอย่างเช่น C:/Users/User/Downloads/Caladium-Classification-master/Caladium-Classification-master/ 
 
 ถ้ามี Error path ให้ทำการแก้ path ของไฟล์ csv ด้วยตัวเอง
 และถ้าเกิดไฟล์ไม่สามารถ run ได้ ให้ใช้ไฟล์ learning_based_test.ipynb รันผ่าน Google colab 
 และ ทำการ Upload ไฟล์ train test csv ขึ้นระบบด้วย และ copy path ลงในคำสั่ง
+
+
