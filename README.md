@@ -33,3 +33,19 @@ pip install -r requirements.txt
 ```sh
 python handcraft_based.py
 ```
+## _Learning Based_
+## Configuration
+วิธีการนำไฟล์มา Test ให้นำไฟล์ที่จะเทส มาใส่ในโฟลเดอร์ Test
+
+## Installation
+```sh
+pip install -r requirements.txt
+```
+
+## Run
+```sh
+python learning_based.py
+
+## Configuration
+ไฟล์นี้เป็นไฟล์ที่เอาไว้ Train และ Save model
+
