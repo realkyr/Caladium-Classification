@@ -1,10 +1,9 @@
+from Path import ROOT_PATH
 from FeatureExtractors import *
 from Utils import *
 from Album import *
 import sklearn.neighbors as sn
 from sklearn import svm
-
-ROOT_PATH = '' # if use absolute path. path goes here like C:/document/
 
 # ===============================
 # training session
@@ -12,7 +11,7 @@ ROOT_PATH = '' # if use absolute path. path goes here like C:/document/
 class_number = 12 # number of classes
 for label in range(class_number):
   # loop for each classes
-  dynamic_input_dir = ROOT_PATH + 'Train/' + str(label+1)
+  dynamic_input_dir = ROOT_PATH  + 'Train/' + str(label+1)
 
   # create train images classes
   train_images = Album()
