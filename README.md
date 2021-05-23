@@ -42,7 +42,7 @@ python handcraft_based.py
 ## _Learning Based_
 ## Configuration
 วิธีการนำไฟล์มา Test ให้นำไฟล์ที่จะเทส มาใส่ในโฟลเดอร์ Test
-วิธีการนำไฟล์ Test มาใช้ จะต้องทำการ run ไฟล์ handcraft_based.py ก่อนเพื่อให้ import ข้อมูล test และ train ออกมาเป็น csv
+วิธีการนำไฟล์ Test มาใช้ จะต้องทำการ run ไฟล์ handcraft_based.py ก่อนเพื่อให้ Export ข้อมูล test และ train ออกมาเป็น csv
 ## Installation
 ```sh
 pip install -r requirements.txt
