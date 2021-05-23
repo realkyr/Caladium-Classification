@@ -45,7 +45,13 @@ pip install -r requirements.txt
 ## Run
 ```sh
 python learning_based.py
-
+```
 ## Configuration
-ไฟล์นี้เป็นไฟล์ที่เอาไว้ Train และ Save model
+ไฟล์ learning_based.py เป็นไฟล์ที่เอาไว้ Train และ Save model 
 
+ไฟล์ learning_based_test.py เป็นการ Load Model มาทดสอบ และ เทสเพื่อดูผลลัพธ์
+วิธีการนำไฟล์ Test มาใช้ จะต้องทำการ run ไฟล์ handcraft_based.py ก่อนเพื่อให้ import ข้อมูล test และ train ออกมาเป็น csv
+
+ถ้ามี Error path ให้ทำการแก้ path ของไฟล์ csv ด้วยตัวเอง
+และถ้าเกิดไฟล์ไม่สามารถ run ได้ ให้ใช้ไฟล์ learning_based_test.ipynb รันผ่าน Google colab 
+การนำไฟล์ Train และ Test ให้ทำการรันไฟล์ handcraft_based.py ก่อนเพื่อให้ import ข้อมูล test และ train ออกมาเป็น csv
