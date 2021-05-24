@@ -41,8 +41,10 @@ dynamic_input_dir = 'Test/'
 
 # create an Test Image's album
 test_images = Album()
-for i in range(1, 13):
-  test_images.init_album(ROOT_PATH + dynamic_input_dir + str(i))
+solution = []
+for i in range(12):
+  test_images.init_album(ROOT_PATH + dynamic_input_dir + str(i+1))
+  solution += ([i] * (test_images.get_length()-len(solution)))
 
 # extracting feature
 extract_feature(test_images)
@@ -100,12 +102,24 @@ print(len(featureTs))
 
 # print(max_attribute[0])
 # print(min_attribute[0])
+correct = 0
 for i in range(len(featureTs)):
   print(test_set_name[i])
   # print(featureTs[i][0])
   new_label.append(int(out[i]))
-  print(out[i])
+  print('predicted :', out[i])
+  print('expected :', solution[i])
+  if (out[i] == solution[i]):
+    correct += 1
+print(str(correct) + '/' + str(len(featureTs)))
+print('correctness :', correct/len(featureTs))
+
 test_images.set_labels(new_label)
 df = test_images.get_dataframe()
 if df is not None :
   df.to_csv(ROOT_PATH + 'test.csv')
+
+test_images.set_labels(solution)
+df = test_images.get_dataframe()
+if df is not None :
+  df.to_csv(ROOT_PATH + 'test_solution.csv')
